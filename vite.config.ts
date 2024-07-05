@@ -130,6 +130,7 @@ export default defineConfig(({ mode }) => {
       watch: false,
       globals: true,
       environment: 'jsdom',
+      setupFiles: ['./src/setupTests.ts'], // 如果你有全局的测试设置，比如扩展 expect 或者配置全局 mock
       include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
       reporters: ['default'],
