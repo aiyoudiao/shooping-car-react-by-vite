@@ -10,7 +10,7 @@
     "serve-static": "nx serve-static",
     "test": "nx test",
     "lint": "nx lint",
-    "e2e": "nx e2e",
+    "e2e": "nx e2e e2e",
     "clear": "npx nx reset",
     "format": "prettier --write ./src",
     "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d dist"

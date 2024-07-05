@@ -1,16 +1,16 @@
 import { expect, Page, test } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:3000/')
+  await page.goto('http://localhost:4200/shooping-car-react-by-vite/')
 })
 
 test('具有标题', async ({ page }) => {
-  await expect(page).toHaveTitle('购物车')
+  await expect(page).toHaveTitle('ShoopingCarReactByVite')
 })
 
 test.describe('商品列表', () => {
   test('添加加载状态', async ({ page }) => {
-    expect(await page.getByTestId('loading-card').count()).toBe(8)
+    expect(await page.getByTestId('loading-card').count()).toBe(4)
   })
 })
 
@@ -69,7 +69,7 @@ test.describe('购物车', () => {
 
     const productInCart = await productShouldBeInCart(page)
 
-    const removeBtn = page.getByRole('button', { name: '删除' })
+    const removeBtn = page.getByTestId('remove-product')
     await removeBtn.click()
 
     await expect(productInCart).toBeHidden()

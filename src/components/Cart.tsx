@@ -21,7 +21,7 @@ const ProductItem: FC<ProductItemProps> = props => {
   const { amount, product, size, onDelete } = props
 
   return (
-    <div className="flex items-start py-4">
+    <div className="flex items-start py-4" data-testid="cart-product">
       <img
         className="w-18 h-28 object-cover rounded-md"
         src={`/shooping-car-react-by-vite//static/products/${product.sku}-1-product.webp`}
@@ -58,7 +58,13 @@ const ProductItem: FC<ProductItemProps> = props => {
             }}
           />
 
-          <Button type="text" className="py-6 mt-auto text-2xl ml-8" danger onClick={onDelete}>
+          <Button
+            type="text"
+            data-testid="remove-product"
+            className="py-6 mt-auto text-2xl ml-8"
+            danger
+            onClick={onDelete}
+          >
             <DeleteOutlined />
           </Button>
         </div>

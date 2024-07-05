@@ -29,7 +29,7 @@ const ProductImage: FC<ProductImageProps> = ({ sku }) => {
 
 export const ProductLoading = () => {
   return (
-    <Card data-test-id="loading-card" cover={<Skeleton.Image active className="!w-full min-h-72 rounded-t-lg" />}>
+    <Card data-testid="loading-card" cover={<Skeleton.Image active className="!w-full min-h-72 rounded-t-lg" />}>
       <Skeleton active />
     </Card>
   )
@@ -72,7 +72,7 @@ export const Product: FC<ProductProps> = props => {
       className="relative transition-all transform hover:scale-105 cursor-pointer"
       cover={
         data.isFreeShipping ? (
-          <Badge.Ribbon placement="end" text="包邮" data-test-id="free-shipping">
+          <Badge.Ribbon placement="end" text="包邮" data-testid="free-shipping">
             <ProductImage sku={data.sku}></ProductImage>
           </Badge.Ribbon>
         ) : (
@@ -113,7 +113,7 @@ export const Product: FC<ProductProps> = props => {
           <span className="text-xl">.{fractional}</span>
         </p>
         {data.installments > 0 ? (
-          <p data-test-id="installments" className="text-gray-500 text-sm">
+          <p data-testid="installments" className="text-gray-500 text-sm">
             或分 <span className="font-bold text-orange-500">{data.installments}</span> 期，每期
             <span className="font-bold text-green-500"> ${BigMath.divide(data.price, data.installments)}</span>
           </p>
@@ -121,7 +121,7 @@ export const Product: FC<ProductProps> = props => {
           <div className="text-sm text-gray-500">暂不支持分期</div>
         )}
         <Button
-          data-test-id="add-product"
+          data-testid="add-product"
           className="mt-2"
           type="primary"
           block
