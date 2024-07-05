@@ -1,0 +1,10 @@
+/common
+/public
+node_modules
+
+# 时间缘故暂时忽略全部，有空再逐个处理
+
+src/components
+src/pages
+src/redux
+src/shared
